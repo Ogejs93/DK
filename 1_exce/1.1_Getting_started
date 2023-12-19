@@ -1,0 +1,23 @@
+1234-MBP DK/1_exce ‹main› » docker container run -d nginx
+
+d70c59d16f9788cacdb3232b28432d8eb3da6872a6f429f6a018a2584a50f7a1
+1234-MBP DK/1_exce ‹main› » docker container run -d nginx
+
+8d74d0a2df721cb212d0b9ffd6fc5d22ef1730aa8f0d8dbb29dca2a7464dfba7
+1234-MBP DK/1_exce ‹main› » docker container run -d nginx
+
+21e6c289daad364ca19f224102efa2e21614dff88fb4991057d6d9e9d7462314
+1234-MBP DK/1_exce ‹main› » docker container ls -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+21e6c289daad   nginx     "/docker-entrypoint.…"   14 seconds ago   Up 13 seconds   80/tcp    sleepy_elbakyan
+8d74d0a2df72   nginx     "/docker-entrypoint.…"   15 seconds ago   Up 14 seconds   80/tcp    sweet_blackwell
+d70c59d16f97   nginx     "/docker-entrypoint.…"   17 seconds ago   Up 16 seconds   80/tcp    serene_moore
+1234-MBP DK/1_exce ‹main› » docker container stop 8d74d0a2df72 d70c59d16f97
+8d74d0a2df72
+d70c59d16f97
+1234-MBP DK/1_exce ‹main› » docker container ls -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                     PORTS     NAMES
+21e6c289daad   nginx     "/docker-entrypoint.…"   49 seconds ago   Up 48 seconds              80/tcp    sleepy_elbakyan
+8d74d0a2df72   nginx     "/docker-entrypoint.…"   50 seconds ago   Exited (0) 2 seconds ago             sweet_blackwell
+d70c59d16f97   nginx     "/docker-entrypoint.…"   52 seconds ago   Exited (0) 2 seconds ago             serene_moore
+1234-MBP DK/1_exce ‹main› »

@@ -1,0 +1,36 @@
+1234-MBP DK/1_exce ‹main*› » docker ps -as
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                     PORTS     NAMES             SIZE
+21e6c289daad   nginx     "/docker-entrypoint.…"   4 minutes ago   Up 4 minutes               80/tcp    sleepy_elbakyan   1.09kB (virtual 192MB)
+8d74d0a2df72   nginx     "/docker-entrypoint.…"   4 minutes ago   Exited (0) 4 minutes ago             sweet_blackwell   1.09kB (virtual 192MB)
+d70c59d16f97   nginx     "/docker-entrypoint.…"   4 minutes ago   Exited (0) 4 minutes ago             serene_moore      1.09kB (virtual 192MB)
+1234-MBP DK/1_exce ‹main*› » docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+nginx        latest    62bd10ca4c54   12 hours ago   192MB
+1234-MBP DK/1_exce ‹main*› » docker container rm 21e6c289daad 8d74d0a2df72 d70c59d16f97
+8d74d0a2df72
+d70c59d16f97
+Error response from daemon: You cannot remove a running container 21e6c289daad364ca19f224102efa2e21614dff88fb4991057d6d9e9d7462314. Stop the container before attempting removal or force remove
+1234-MBP DK/1_exce ‹main*› » docker container stop 21e6c289daad                                                      1 ↵
+21e6c289daad
+1234-MBP DK/1_exce ‹main*› » docker container rm 21e6c289daad 8d74d0a2df72 d70c59d16f97
+21e6c289daad
+Error response from daemon: No such container: 8d74d0a2df72
+Error response from daemon: No such container: d70c59d16f97
+1234-MBP DK/1_exce ‹main*› » docker container rm 21e6c289daad                                                        1 ↵
+Error response from daemon: No such container: 21e6c289daad
+1234-MBP DK/1_exce ‹main*› » docker image rm nginx                                                                   1 ↵
+Untagged: nginx:latest
+Untagged: nginx@sha256:5040a25cc87f100efc43c5c8c2f504c76035441344345c86d435c693758874b7
+Deleted: sha256:62bd10ca4c543e3692417ae0c43ded1a69039f77e2fbe4fab036ee94d7d0e5c5
+Deleted: sha256:0e6e65d74269addb8bd8dae550bd85e1ba0285317e91b7f3245b93e1443db7ed
+Deleted: sha256:ce10e5ace7476799d09d114a563d443bfae4802227f64a6c0e1894733c7598a6
+Deleted: sha256:263abebe558393be63effbc37db82415c991ce008ebf57a9d68724bdcbcba06e
+Deleted: sha256:a0ff1557526a4027654eec2d351a56b972197fbdb88d7ff4479045a75b227f21
+Deleted: sha256:35cd6cedf8a8a45f6605ab261698cd715f20b4b371f5c0dc6661e1813d0efdfd
+Deleted: sha256:392f6bb6118b73d9385adee4ab1307bd9bdc9523b7829135b6b3e452f4e8a472
+Deleted: sha256:c7ed07af9d6688899456cb187c1f81c88a30a60f2a7477d8e40af31a201b1a55
+1234-MBP DK/1_exce ‹main*› » docker ps -as
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES     SIZE
+1234-MBP DK/1_exce ‹main*› » docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+1234-MBP DK/1_exce ‹main*› »

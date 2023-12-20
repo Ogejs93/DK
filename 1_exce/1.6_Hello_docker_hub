@@ -1,0 +1,8 @@
+1234-MBP DK/1_exce ‹main› » docker run -it devopsdockeruh/pull_exercise
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+Give me the password: basics
+You found the correct password. Secret message is:
+"This is the secret message"
+
+1234-MBP DK/1_exce ‹main› »
+

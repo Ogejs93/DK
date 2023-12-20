@@ -1,0 +1,17 @@
+# Use the official Ubuntu 20.04 image
+FROM ubuntu:20.04
+
+# Install curl
+RUN apt-get update && apt-get install -y curl
+
+# Create a directory to store the script
+WORKDIR /app
+
+# Copy the script into the container
+COPY script.sh /app/script.sh
+
+# Give execute permissions to the script
+RUN chmod +x /app/script.sh
+
+# Set the script to run on container start
+CMD ["/app/script.sh"]

@@ -1,0 +1,36 @@
+1234-MBP ~ ‹main*› » docker pull devopsdockeruh/simple-web-service:ubuntu                            127 ↵
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Image is up to date for devopsdockeruh/simple-web-service:ubuntu
+docker.io/devopsdockeruh/simple-web-service:ubuntu
+
+What's Next?
+  1. Sign in to your Docker account → docker login
+  2. View a summary of image vulnerabilities and recommendations → docker scout quickview devopsdockeruh/simple-web-service:ubuntu
+1234-MBP ~ ‹main*› » docker pull devopsdockeruh/simple-web-service:alpine
+alpine: Pulling from devopsdockeruh/simple-web-service
+ba3557a56b15: Pull complete
+1dace236434b: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:alpine
+docker.io/devopsdockeruh/simple-web-service:alpine
+
+What's Next?
+  1. Sign in to your Docker account → docker login
+  2. View a summary of image vulnerabilities and recommendations → docker scout quickview devopsdockeruh/simple-web-service:alpine
+
+1234-MBP ~ ‹main*› » docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED        SIZE
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   2 years ago    83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   2 years ago    15.7MB
+
+1234-MBP DK/1_exce ‹main*› » docker run -d --name alpine_container devopsdockeruh/simple-web-service:alpine
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+15977dbf4153a9e24e38ab6035985cfbd5d95e99591d0fc41ffc7f9e6c31c525
+1234-MBP DK/1_exce ‹main*› » docker exec -it alpine_container sh
+/usr/src/app #  tail -f /usr/src/app/text.log
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-12-20 08:16:25 +0000 UTC
+2023-12-20 08:16:27 +0000 UTC
+2023-12-20 08:16:29 +0000 UTC

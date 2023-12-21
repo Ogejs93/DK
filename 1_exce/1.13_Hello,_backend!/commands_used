@@ -1,0 +1,54 @@
+1234-MBP material-applications/example-backend ‹main*› » nvim dockerfile
+1234-MBP material-applications/example-backend ‹main*› » docker build -t example-backend .
+[+] Building 27.3s (11/11) FINISHED                        docker:desktop-linux
+ => [internal] load build definition from dockerfile                       0.0s
+ => => transferring dockerfile: 221B                                       0.0s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 148B                                          0.0s
+ => [internal] load metadata for docker.io/library/golang:1.17-alpine      1.9s
+ => [1/6] FROM docker.io/library/golang:1.17-alpine@sha256:99ddec1bbfd6d  13.1s
+ => => resolve docker.io/library/golang:1.17-alpine@sha256:99ddec1bbfd6d6  0.0s
+ => => sha256:99ddec1bbfd6d6bca3f9804c02363daee8c8524dae5 1.65kB / 1.65kB  0.0s
+ => => sha256:544ba2d3845507b8e23ed02f9e5bb301dc527dd16a8 1.36kB / 1.36kB  0.0s
+ => => sha256:0ebb35c983461a4215fc4093d4835a9d686fd004703 5.25kB / 5.25kB  0.0s
+ => => sha256:f97344484467e4c4ebb85aae724170073799295a344 2.69MB / 2.69MB  0.4s
+ => => sha256:dd11db305753e3de168e93d91f50ec724d33aa1 271.71kB / 271.71kB  0.2s
+ => => sha256:b64f5c91bf32af83371aee853f2f02c3bdbcbfdca89e74f 154B / 154B  0.2s
+ => => sha256:309b4b76b0ec5333d4390f6f88b0c6d51544c4 104.18MB / 104.18MB  10.0s
+ => => sha256:615a4a2411a96be5935087194462125f956c1f22f7f489b 126B / 126B  0.4s
+ => => extracting sha256:f97344484467e4c4ebb85aae724170073799295a3442c50a  0.1s
+ => => extracting sha256:dd11db305753e3de168e93d91f50ec724d33aa194148df6a  0.0s
+ => => extracting sha256:b64f5c91bf32af83371aee853f2f02c3bdbcbfdca89e74ff  0.0s
+ => => extracting sha256:309b4b76b0ec5333d4390f6f88b0c6d51544c4c3a110f5c5  3.0s
+ => => extracting sha256:615a4a2411a96be5935087194462125f956c1f22f7f489b5  0.0s
+ => [internal] load build context                                          0.0s
+ => => transferring context: 29.68kB                                       0.0s
+ => [2/6] WORKDIR /app                                                     0.2s
+ => [3/6] COPY go.mod go.sum ./                                            0.0s
+ => [4/6] RUN go mod download                                              8.0s
+ => [5/6] COPY . .                                                         0.0s
+ => [6/6] RUN go build -o main .                                           3.1s
+ => exporting to image                                                     0.9s
+ => => exporting layers                                                    0.9s
+ => => writing image sha256:7913eec0bb96a834f53bd8b65933a09b645e60333d57d  0.0s
+ => => naming to docker.io/library/example-backend                         0.0s
+
+What's Next?
+  1. Sign in to your Docker account → docker login
+  2. View a summary of image vulnerabilities and recommendations → docker scout quickview
+
+1234-MBP material-applications/example-backend ‹main*› » docker run -p 8080:8080 example-backend
+[Ex 2.4+] REDIS_HOST env was not passed so redis connection is not initialized
+[Ex 2.6+] POSTGRES_HOST env was not passed so postgres connection is not initialized
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> server/router.pingpong (4 handlers)
+[GIN-debug] GET    /messages                 --> server/controller.GetMessages (4 handlers)
+[GIN-debug] POST   /messages                 --> server/controller.CreateMessage (4 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2023/12/21 - 15:15:03 | 404 |      90.666µs |    192.168.65.1 | GET      "/"
+[GIN] 2023/12/21 - 15:15:03 | 404 |       13.75µs |    192.168.65.1 | GET      "/favicon.ico"
